@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:layout_marginLeft="15dp"
     android:layout_marginRight="15dp"
     android:layout_marginTop="15dp"
@@ -15,6 +15,7 @@
         android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/forecastText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
@@ -31,6 +32,16 @@
             android:layout_height="wrap_content">
         </LinearLayout>
 
+        <Button
+            android:id="@+id/more_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_margin="13dp"
+            android:text="查看更多天气"/>
+
+
     </LinearLayout>
+
 
 </com.google.android.material.card.MaterialCardView>

@@ -16,8 +16,8 @@ object SunnyWeatherNetwork {
     // 对新增的WeatherService接口进行封装
     private val weatherService = ServiceCreator.create(WeatherService::class.java)
 
-    suspend fun getDailyWeather(lng: String, lat: String) =
-        weatherService.getDailyWeather(lng, lat).await()
+    suspend fun getDailyWeather(lng: String, lat: String, step: String) =
+        weatherService.getDailyWeather(lng, lat, step).await()
 
     suspend fun getRealtimeWeather(lng: String, lat: String) =
         weatherService.getRealtimeWeather(lng, lat).await()

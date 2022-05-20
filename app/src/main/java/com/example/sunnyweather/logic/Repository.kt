@@ -30,14 +30,14 @@ object Repository {
     }
 
 
-    fun refreshWeather(lng: String, lat: String) = liveData(Dispatchers.IO) {
+    fun refreshWeather(lng: String, lat: String, step: String) = liveData(Dispatchers.IO) {
         val result = try {
             coroutineScope {
                 val deferredRealtime = async {
                     SunnyWeatherNetwork.getRealtimeWeather(lng, lat)
                 }
                 val deferredDaily = async {
-                    SunnyWeatherNetwork.getDailyWeather(lng, lat)
+                    SunnyWeatherNetwork.getDailyWeather(lng, lat, step)
                 }
                 val realtimeResponse = deferredRealtime.await()
                 val dailyResponse = deferredDaily.await()

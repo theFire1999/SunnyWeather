@@ -1,6 +1,7 @@
 package com.example.sunnyweather.ui.weather
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
@@ -84,10 +85,21 @@ class WeatherActivity : AppCompatActivity() {
                     InputMethodManager.HIDE_NOT_ALWAYS)
             } })
 
+        // 跳转更多天气页面逻辑
+        val MoreBtn : Button = findViewById(R.id.more_btn)
+        MoreBtn.setOnClickListener {
+            val intent = Intent(this, ForecastActivity::class.java).
+            apply {
+                putExtra("location_lng", viewModel.locationLng)
+                putExtra("location_lat", viewModel.locationLat)
+                putExtra("place_name", viewModel.placeName)
+            }
+            startActivity(intent)
+        }
     }
 
     fun refreshWeather() {
-        viewModel.refreshWeather(viewModel.locationLng, viewModel.locationLat)
+        viewModel.refreshWeather(viewModel.locationLng, viewModel.locationLat,"5")
         val swipeRefresh : SwipeRefreshLayout = findViewById(R.id.swipeRefresh)
         swipeRefresh.isRefreshing = true
     }

@@ -14,12 +14,14 @@ class WeatherViewModel : ViewModel() {
 
     var placeName = ""
 
+    var foreStep= ""
+
     val weatherLiveData = Transformations.switchMap(locationLiveData) { location ->
-        Repository.refreshWeather(location.lng, location.lat)
+        Repository.refreshWeather(location.lng, location.lat, location.step)
     }
 
-    fun refreshWeather(lng: String, lat: String) {
-        locationLiveData.value = Location(lng, lat)
+    fun refreshWeather(lng: String, lat: String, step: String) {
+        locationLiveData.value = Location(lng, lat, step)
     }
 
 }
