@@ -95,6 +95,7 @@ class WeatherActivity : AppCompatActivity() {
                 putExtra("place_name", viewModel.placeName)
             }
             startActivity(intent)
+
         }
     }
 

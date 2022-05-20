@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:layout_margin="13dp"
-                android:text="5天"/>
+                android:text="15天"/>
 
             <Button
                 android:id="@+id/btn10"
@@ -34,14 +34,14 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:layout_margin="13dp"
-                android:text="10天"/>
+                android:text="30天"/>
             <Button
                 android:id="@+id/btn15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:layout_margin="13dp"
-                android:text="15天"/>
+                android:text="60天"/>
 
         </LinearLayout>
         <include layout="@layout/forecast" />

@@ -14,7 +14,7 @@ interface WeatherService {
     fun getRealtimeWeather(@Path("lng") lng: String, @Path("lat") lat: String): Call<RealtimeResponse>
 
 //    ?dailysteps={step}
-    @GET("v2.6/${SunnyWeatherApplication.TOKEN}/{lng},{lat}/daily")
+    @GET("v2.5/${SunnyWeatherApplication.TOKEN}/{lng},{lat}/daily")
     fun getDailyWeather(@Path("lng") lng: String, @Path("lat") lat: String,@Query("dailysteps") dailysteps: String):
             Call<DailyResponse>
 

@@ -26,6 +26,9 @@ class ForecastActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_forecast)
 
+        val MoreBtn : Button = findViewById(R.id.more_btn)
+        MoreBtn.setVisibility(View.GONE)
+
         // 从Intent中取出经 纬度坐标和地区名称，并赋值到WeatherViewModel的相应变量中
         if (viewModel.locationLng.isEmpty()) {
             viewModel.locationLng = intent.getStringExtra("location_lng") ?: ""
@@ -46,19 +49,19 @@ class ForecastActivity : AppCompatActivity() {
         val Btn5 : Button = findViewById(R.id.btn5)
         var step = ""
         Btn5.setOnClickListener {
-            viewModel.foreStep="5"
+            viewModel.foreStep="15"
             viewModel.refreshWeather(viewModel.locationLng, viewModel.locationLat,viewModel.foreStep)
         }
 
         val Btn10 : Button = findViewById(R.id.btn10)
         Btn10.setOnClickListener {
-            viewModel.foreStep="10"
+            viewModel.foreStep="30"
             viewModel.refreshWeather(viewModel.locationLng, viewModel.locationLat,viewModel.foreStep)
         }
 
         val Btn15 : Button = findViewById(R.id.btn15)
         Btn15.setOnClickListener {
-            viewModel.foreStep="15"
+            viewModel.foreStep="60"
             viewModel.refreshWeather(viewModel.locationLng, viewModel.locationLat,viewModel.foreStep)
         }
 
